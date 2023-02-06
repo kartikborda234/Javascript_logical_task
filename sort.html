@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Alphabetic(someArray) {
+            var s = someArray.sort()
+            s.map((ele) => {
+                return ele.sort();
+            })
+            return s;
+        }
+        const arr = [
+            ["e", "d", "f"],
+            ["a", "c", "b"],
+            ["m", "o", "n"]
+        ]
+        console.log(Alphabetic(arr));
+
+        function OrderSum(someArray) {
+            return someArray.sort((a, b) => a.reduce((acc, curr) => acc + curr) - b.reduce((acc, curr) => acc + curr));
+        }
+        console.log(OrderSum([[1,3],[4,2],[2,1]]));
+    </script>
+</body>
+
+</html>

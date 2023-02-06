@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <script>
+        function alternateString(str) {
+            var result='';
+            for (let i = 0; i < str.length; i++) {
+                 (i%2==0) ? result+=str.charAt(i).toUpperCase() :result+=str.charAt(i).toLowerCase(); 
+                // if (i%2==0) {
+                //     result+=str.charAt(i).toUpperCase();
+                // }else{
+                //   result+=str.charAt(i).toLowerCase();         
+                // }
+            }
+            return result;
+        }
+        console.log(alternateString("i am a string"));//I Am a sTrInG
+        console.log(alternateString("javascript"));//JaVaScRiPt
+        console.log(alternateString("html"));//HtMl
+
+        function extractQuote(quo) {
+            var q=quo.indexOf('')+1;
+            var last=quo.lastIndexOf('"');
+            var str1 = quo.slice(q,last).split();
+            var b=quo.slice(last,quo.length-1);
+            var str2=b.replace('", -',"").split();
+            const arr = str1.concat(str2);
+            return arr;
+        }
+        var quote=`"the unexamined life is not worth living", -Socrates`
+        var quote2=`"Be yourself; everyone else is already taken."", -Oscar Wilde`
+        var quote3=`"Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.", -Albert Einstein`
+        console.log(extractQuote(quote));//['the unexamined life is not worth living', 'Socrate']
+        console.log(extractQuote(quote2));//['Be yourself; everyone else is already taken."', 'Oscar Wild']
+        console.log(extractQuote(quote3));// ["Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.", 'Albert Einstei']
+
+    </script>
+</body>
+</html>

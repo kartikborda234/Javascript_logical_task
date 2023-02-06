@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String task</title>
+</head>
+<body>
+    <input type="text" id="getString">
+    <button type="button" onclick="myFunction()">submit</button>
+    <script>
+        var arr = [];
+            function myFunction() {
+                  var test_str = document.getElementById("getString").value;
+                var str2=test_str.replace(/ /g, "")
+                var str=str2.toLowerCase();
+                if (str.length == 0) {
+                    console.log("Invalid string")
+                    return;
+                }
+                for (let i = 0; i < str.length; i++) {
+                    let count = 0;
+                    for (let j = 0; j < str.length; j++) {
+                        if (str[i] == str[j] && i > j) {
+                            break;
+                        }
+                        if (str[i] == str[j]) {
+                            count++;
+                        }
+                    }
+                    if (count > 0){
+                        var obj = { name: str[i], occurance: count }
+                        console.log(obj);
+                        arr.push(obj);
+                    }
+
+                }
+                console.log(arr);
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function myFunc(a) {
+            const map = new Map();
+            a.forEach(obj => {
+                const value = obj['instancePath'];
+                if (!map.has(value)) {
+                    map.set(value, obj);
+                }
+            });
+            return [...map.values()]
+        }
+
+        var arr = [{ "instancePath": "IN2105.FL3.KNBDD3", "tagDetails": ["chipSilo_inletAcceptChips_Silo_Massflowrate"] }, { "instancePath": "IN2105.FL3.KNBL3", "tagDetails": ["DPLTank_inletBlackLiq_MassFlowRate"] }, { "instancePath": "IN2105.FL3.KNBL3", "tagDetails": ["D37_Storage_outletPulp_MassFlowRate"] }, { "instancePath": "IN2105.FL3.KNBL3", "tagDetails": ["D1_Wash_Press_inletWashLiq_DissSol", "D1_Wash_Press_inletWashLiq_MassFlowRate"] }, { "instancePath": "IN2105.FL3.KNBL3", "tagDetails": ["ZBleaching_Wash_press_DilutionFactor_signal", "ZBleaching_Wash_press_inletWashLiq_DissSol"] }, { "instancePath": "IN2105.FL3.KNBL3", "tagDetails": ["EOP_Wash_Press_inletWashLiq_DissSol", "EOP_Wash_Press_inletWashLiq_MassFlowRate"] }, { "instancePath": "IN2105.FL3.KNBS31", "tagDetails": ["pressWasher2_inletWashLiq_DissSol", "pressWasher2_inletWashLiq_MassFlowRate"] }, { "instancePath": "IN2105.FL3.KNBS31", "tagDetails": ["screwWasher_inletWashLiq_DissSol", "screwWasher_inletWashLiq_MassFlowRate"] }, { "instancePath": "IN2105.FL3.KNBDD3", "tagDetails": ["White_Liquor_Tank_outletWhiteLiq_MassFlowRate"] }, { "instancePath": "IN2105.FL3.KNBDD3", "tagDetails": ["Batch_Dig_1_ProdPerCook_signal", "Batch_Dig_1_noiseChipFlow"] }, { "instancePath": "IN2105.FL3.KNBDD3", "tagDetails": ["Batch_Dig_2_ProdPerCook_signal", "Batch_Dig_2_noiseChipFlow"] }, { "instancePath": "IN2105.FL3.KNBDD3", "tagDetails": ["Batch_Dig_3_ProdPerCook_signal", "Batch_Dig_3_noiseChipFlow"] }, { "instancePath": "IN2105.FL3.KNBDD3", "tagDetails": ["Batch_Dig_4_ProdPerCook_signal", "Batch_Dig_4_noiseChipFlow"] }, { "instancePath": "IN2105.FL3.KNBDD3", "tagDetails": ["Batch_Dig_5_ProdPerCook_signal", "Batch_Dig_5_noiseChipFlow"] }, { "instancePath": "IN2105.FL3.KNBDD3", "tagDetails": ["Batch_Dig_6_ProdPerCook_signal", "Batch_Dig_6_noiseChipFlow"] }, { "instancePath": "IN2105.FL3.KNCY03", "tagDetails": ["groundStorage_Ground_storage_signal", "groundStorage_inletExternalChips_Groundstorage_signal"] }, { "instancePath": "IN2105.FL3.KNBDD3", "tagDetails": ["LimeMud_Filter_inletWater_MassFlowRate"] }]
+        console.log(myFunc(arr));
+
+    </script>
+</body>
+
+</html>

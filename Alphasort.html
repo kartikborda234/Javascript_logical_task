@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    
+        function AlphaSort(s1, reverseOrder) {
+            var a = s1.split('')
+            return a.every((char, index) => {
+                if (!reverseOrder) {
+                    return char >= a[index - 1]
+                } else {
+                    return char >= a[index - 1]
+                }
+            })
+        }
+        console.log(AlphaSort("abbfhkpqtyz", false));
+        console.log(AlphaSort("zyxgfba", true));
+
+        function orderVowelConstant(str, position) {
+            var char = str.charAt(position - 1);
+            let vowels = 'aeiouAEIOU';
+            if (vowels.includes(char)) {
+                return "vowel"
+            } else {
+                return "consonant"
+            }
+        }
+        console.log(orderVowelConstant("eello", 1));
+        console.log(orderVowelConstant("cat", 2));
+        console.log(orderVowelConstant("mango", 0));
+        console.log(orderVowelConstant("republic", 6));
+
+        function reapeatChar(somestring, reateatTimes) {
+            var chars = somestring.split('');
+            var counts = chars.reduce((pre, cur) => {
+                pre[cur] = pre[cur] + 1 || 1;
+                return pre;
+            }, {})
+            console.log(counts, "aaaaaaaaaaaaa");
+            return Object.keys(counts).filter(char => counts[char] >= reateatTimes);
+        }
+
+        console.log(reapeatChar("abcddef", 2));
+        console.log(reapeatChar("nscgggncdkkk", 3));
+    </script>
+</body>
+
+</html>

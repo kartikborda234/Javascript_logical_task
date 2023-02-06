@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function palindrome(string) {
+            if (string == string.split('').reverse().join('')) {
+               return true
+            }
+            else {
+                return false
+            }
+        }
+        // console.log(palindrome("abcba"));
+        // console.log(palindrome("abcd"));
+
+        function sortArr(arr) {
+            arr.sort((a,b)=>{
+                if (typeof a ==="number" && typeof b==="number") {
+                    return a-b;
+                }else if(typeof a==="string" && typeof b==="string"){
+                    return a.localeCompare(b);
+                }else{
+                    return typeof a === "number" ? -1 : 1;
+                }
+            })
+            return arr;
+        }
+        // console.log(sortArr(["b",6,"a","q",7,2]));
+
+        function occurArr(firstArray, secondArray) {
+            return firstArray.filter(word => secondArray.includes(word))
+        }
+        const firstArray = ["dog", "cat", "parrot"] 
+        const secondArray = ["lizard", "rat", "cat","dog"]
+        console.log(occurArr(firstArray,secondArray));
+    </script>
+</body>
+
+</html>

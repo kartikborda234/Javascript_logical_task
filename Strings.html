@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function uncamalize(str, add) {
+            var i = str.indexOf("w");
+            var newString = str.slice(0, i) + add + str.slice(i)
+            return newString;
+        }
+        // console.log(uncamalize('helloworld'," "));
+        // console.log(uncamalize('helloworld','-'));
+        // console.log(uncamalize('helloworld','_'));
+
+        function insert(str, add, position) {
+            if (!add) {
+                add = ''
+            }
+            if (!position) {
+                position = 0
+            }
+            return str.slice(0, position) + add + str.slice(position);
+
+        }
+        // console.log(insert('we are doing some excercises.'));
+        // console.log(insert('we are doing some excercises.','javaScript '));
+        // console.log(insert('we are doing some excercises.','javaScript ',18));
+
+        function swapCase(str) {
+            let newstr;
+            for (let c of str) {
+                if (c.toUpperCase() === c) {
+                    newstr += c.toLowerCase()
+                }
+                else {
+                    newstr += c.toUpperCase()
+                }
+            }
+            return newstr;
+        }
+        // console.log(swapCase('AaBbc'));
+        // console.log(swapCase('JavaScriot'));
+
+        function humanize(n) {
+            switch (n % 10) {
+                case 1: return n + "st";
+                case 2: return n + "nd";
+                case 3: return n + "rd";
+                case 4: return n + "th";
+
+            }
+        }
+        // console.log(humanize(1));
+        // console.log(humanize(8));
+        // console.log(humanize(301));
+        // console.log(humanize(402));
+        // console.log(humanize(404));
+        function txt_truncate(str,pos,trunc) {
+            if(pos){
+                var a = trunc ? str.slice(0,pos)+trunc:str.slice(0,pos)+"..."
+                return a;
+            }else{
+                return str;
+            }
+        }
+        // console.log(txt_truncate("we are doing JS string excercises."));
+        // console.log(txt_truncate("we are doing JS string excercises.",19));
+        // console.log(txt_truncate("we are doing JS string excercises.",15,'!!'));
+        // console.log(txt_truncate("we are doing JS string excercises.",22,' ?'));
+        // console.log(txt_truncate("we are doing JS string excercises.",15,'~'));
+
+        function Chunks(str,chunk) {
+            var chunksArr=[];
+            for(let i=0;i<str.length;i+=chunk){
+                chunksArr.push(str.slice(i,i+chunk))
+            }   
+            console.log(chunksArr);
+        }
+        console.log(Chunks("W3resource"));
+        console.log(Chunks("W3resource",2));
+        console.log(Chunks("W3resource",3));
+    </script>
+</body>
+</html>

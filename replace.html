@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function strip_tags(strip) {
+            return strip.replace(/<[^>]+>/g,'')
+        }
+        // console.log(strip_tags('<p><strong><em>PHP Exercises</em></strong></p>'));
+        // console.log(strip_tags('<p>HTML</p>'));
+        // console.log(strip_tags('<h1><span>javascript</span></h1>'));
+
+        function remove_non_ascii(rem) {
+            return rem.replace(/[?]/g,'')
+        }
+        // /[^\x00-\x7F]/g
+        // console.log(remove_non_ascii('?????????PHP-MySQL????????????'));
+
+        function remove_non_word(word) {
+            return word.replace(/[^\w\s]/gi,"")
+        }
+        // console.log(remove_non_word('JAVASCRIPT~!@#$%^&*()+`={}[]\\.-"-\'\/?><., -MySQL'));
+
+        function remove_first_occur(str,occur) {
+            return str.replace(occur,"");
+        }
+        // console.log(remove_first_occur("The quick brown box jumps over the lazy dog",'the'));
+        // console.log(remove_first_occur("big black bug bit a big black dog on his big black nose",'big'));
+    </script>
+</body>
+</html>
