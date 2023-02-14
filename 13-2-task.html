@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1. Write a JavaScript program that takes an array of numbers and returns the third smallest number.
+        function smallest(arr) {
+            var small = arr.sort((x, y) => y - x)
+            return small.at(-3)
+        }
+        // console.log(smallest([2,3,5,7,1]));
+        // console.log(smallest([2,3,0,5,7,8,-2,-4]));
+        // console.log(smallest([-14,34,45,555,47,28,-24]));
+
+        //2. Write a JavaScript program that takes an array mixed data type and  calculate the sum of all numbers.
+        function mixed(arr) {
+            var filter = arr.filter((ele) => Number.isInteger(ele))
+            return filter.reduce((pre, cur) => pre + cur)
+        }
+        console.log(mixed([2, 11, 3, "a2", false, 7, 5, 1]));
+    </script>
+</body>
+
+</html>

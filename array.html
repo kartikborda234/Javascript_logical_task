@@ -11,15 +11,11 @@
 <body>
     <script>
         function buildArray(build, index) {
-            // for (let i of index) {
-            //     const newArray = new Array(build[i], build[i], build[i])
-            //     return newArray;
-            // }
-            index.map((i)=>{
+            return index.map((i)=>{
                 return build[i]
             })
         }
-        console.log(buildArray(["mon", "tue", "wed", "thur", "fri"], [1, 3, 4]));
+        console.log(buildArray(["mon", "tue", "wed", "thur", "fri","sat"], [1, 5, 4]));
         // ["tue", "thur", "fri"]
         function shuffle(s) {
             for(let i=s.length-1;i>0;i--){

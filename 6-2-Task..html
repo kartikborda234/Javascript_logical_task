@@ -11,12 +11,30 @@
 <body>
     <script>
         function choice(color, type) {
-            // console.log(color,type,"color-type")
-
+            for (let i = 0; i < color.length; i++) {
+                    let index=i+1
+                    log
+                    switch (index) {
+                        case 1:
+                            return index+type[1] + " Choise is "+ color[i]  
+                        case 2:
+                            return index+type[2] + " Choise is "+ color[i]
+                        case 3:
+                            return  index+type[2] + " Choise is "+ color[i] 
+                        case 4:
+                        case 5:
+                        case 6:
+                        case 7:
+                        case 8:
+                            return                     
+                        default:
+                            break;
+                    }
+            }            
         }
         let color = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"]
         let type = ["th", "st", "nd", "rd"]
-        // console.log(choice(color,type))
+        console.log(choice(color,type))
 
         function isLeap(y) {
             const d = new Date();
@@ -55,12 +73,11 @@
             }
             return a;
         }
-        console.log(firstParam([7, 1, 0, -2]));
-        console.log(firstParam([], 3));
-        console.log(firstParam([7, 1, 0, -2], 3));
-        console.log(firstParam([7, 1, 0, -2], 6));
-        console.log(firstParam([7, 1, 0, -2], -3));
+        // console.log(firstParam([7, 1, 0, -2]));
+        // console.log(firstParam([], 3));
+        // console.log(firstParam([7, 1, 0, -2], 3));
+        // console.log(firstParam([7, 1, 0, -2], 6));
+        // console.log(firstParam([7, 1, 0, -2], -3));
     </script>
 </body>
-
 </html>

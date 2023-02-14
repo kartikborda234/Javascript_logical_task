@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //write a javascript programe to chech if an array  is a factor chain or not.
+        function factorial(arr) {
+            for (var i = 0; i < arr.length - 1; i++) {
+                if (arr[i + 1] % arr[i] !== 0) {
+                    return false
+                }
+            }
+            return true;
+        }
+        // console.log(factorial([2, 4, 8, 16, 32]));
+        // console.log(factorial([2, 4,16,32, 64]));
+        // console.log(factorial([2, 4,16,32,68]));
+        // console.log(factorial([2, 4,16,32,64]));
+        function find(a) {
+          
+        }
+
+        //write a javascript programe to get all the indexes where NaN is found of a given array of numbers and NaN.
+        function nanIndex(arr) {
+            var a=arr.map((ele,i)=>{
+                if (isNaN(ele)) {
+                    return i
+                }
+            }).filter((item)=>{return item})
+            return a;
+        }
+        console.log(nanIndex([2,NaN,8,16,32]));
+        console.log(nanIndex([2,NaN,8,16,32,NaN]));
+    </script>
+</body>
+
+</html>

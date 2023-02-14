@@ -10,24 +10,15 @@
 
 <body>
     <script>
-        function IsAnagram(f, s) {
-            let s1 = f.length;
-            let s2 = s.length;
-            if (s1 != s2) {
-                return false
-            }
-            let str1 = f.split('').sort().join('');
-            let str2 = s.split('').sort().join('');
-            if (str1 === str2) {
-                console.log("True");
-            } else {
-                console.log("False");
-            }
-
+        function getString(str){
+          return str.toLowerCase().split('').sort().join('');
         }
-        let firstStr = "Mary";
-        let secondStr = "Army";
-        IsAnagram(firstStr, secondStr)
+        function IsAnagram(f, s) {
+            let str1 = getString(f)
+            let str2 = getString(s)
+            return str1 === str2;
+        }
+        console.log(IsAnagram("Mary", "Armcy"))
     </script>
 </body>
 </html>

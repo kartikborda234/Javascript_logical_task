@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Write a JavaScript function to create an array of arrays, ungrouping the elements in an array produced by zip.
+        function unZip(arr) {
+            var num=[]
+            var str=[]
+            var bool=[]
+            arr.forEach(element => {
+                for(let i of element){
+                    switch (typeof i) {
+                        case "number":
+                            num.push(i)
+                            break;
+                        case "string":
+                            str.push(i)
+                            break;
+                        default:
+                            bool.push(i)
+                            break;
+                    }
+                }
+            });
+           return [num,str,bool]
+        }
+        // console.log(unZip([['a',1,true],['b',2,false]]))
+        // console.log(unZip([['a',1,true],['b',2]]))
+        // console.log(unZip([['kartik',12,true],['hiren',267,true,false]]))
+
+        // Write a JavaScript program to generate all permutations of a string (contains duplicates).
+        function generate_duplicates(arr) {
+            var random=[]
+            
+        }
+        console.log(generate_duplicates([1,33,5]));
+    </script>
+</body>
+</html>

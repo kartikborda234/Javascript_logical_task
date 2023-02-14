@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // write a javascript programe  that takes an array of integers and returns false if every numer is not prime.otherwise,return true.
+        function prime(arr) {
+            for (let i of arr) {
+                if (i > 2 && i % 2 == 0) {
+                    return false;
+                }
+            }
+            return true
+        }
+        // console.log(prime([2,3,5,7]));
+        // console.log(prime([2,3,5,7,8]));    
+
+        // write a javascript programe to remove to all falsy values from an given object or array.
+        function remove_falsy(obj) {
+            var newObj = {};
+            for (let key in obj) {
+                if (obj[key] !== null && obj[key] !== '' && obj[key] !== false && obj[key] !== 0) {
+                    if (Array.isArray(obj[key])) {
+                        var f = obj[key].filter((ele) => ele !== null && ele !== false)
+                        newObj[key]=f;
+                    }else if(typeof obj[key] ==="object"){
+                            for(let k in obj[key]){
+                                if (obj[key][k] !==0 && obj[key][k] !== false) {
+                                    newObj[key]={[k]:obj[key][k]}
+                                    
+                                }
+                            }
+                    }else{
+                        newObj[key]=obj[key];
+                    }                    
+                }
+            }
+            return newObj;
+        }
+        var obj = { a: null, b: false, c: true, d: 0, e: 1, f: '', g: 'a', h: [null, false, true, 1, 'a'], i: { j: 0, k: false, l: 'a' } }
+        console.log(remove_falsy(obj));
+    </script>
+</body>
+
+</html>

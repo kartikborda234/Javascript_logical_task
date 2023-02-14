@@ -11,30 +11,25 @@
         function alternateString(str) {
             var result='';
             for (let i = 0; i < str.length; i++) {
-                 (i%2==0) ? result+=str.charAt(i).toUpperCase() :result+=str.charAt(i).toLowerCase(); 
-                // if (i%2==0) {
-                //     result+=str.charAt(i).toUpperCase();
-                // }else{
-                //   result+=str.charAt(i).toLowerCase();         
-                // }
+                 ((i%2) === 0) ? result+=str.charAt(i).toUpperCase() :result+=str.charAt(i).toLowerCase();
             }
             return result;
         }
-        console.log(alternateString("i am a string"));//I Am a sTrInG
-        console.log(alternateString("javascript"));//JaVaScRiPt
-        console.log(alternateString("html"));//HtMl
+        // console.log(alternateString("i am a string"));//I Am a sTrInG
+        // console.log(alternateString("javascript"));//JaVaScRiPt
+        // console.log(alternateString("html"));//HtMl
 
         function extractQuote(quo) {
             var q=quo.indexOf('')+1;
             var last=quo.lastIndexOf('"');
             var str1 = quo.slice(q,last).split();
-            var b=quo.slice(last,quo.length-1);
+            var b=quo.slice(last,quo.length);
             var str2=b.replace('", -',"").split();
             const arr = str1.concat(str2);
             return arr;
         }
         var quote=`"the unexamined life is not worth living", -Socrates`
-        var quote2=`"Be yourself; everyone else is already taken."", -Oscar Wilde`
+        var quote2=`"Be yourself; everyone else is already taken."", -Kartik Borda`
         var quote3=`"Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.", -Albert Einstein`
         console.log(extractQuote(quote));//['the unexamined life is not worth living', 'Socrate']
         console.log(extractQuote(quote2));//['Be yourself; everyone else is already taken."', 'Oscar Wild']

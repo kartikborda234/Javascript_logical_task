@@ -10,19 +10,22 @@
 
 <body>
     <script>
-    
         function AlphaSort(s1, reverseOrder) {
             var a = s1.split('')
-            return a.every((char, index) => {
-                if (!reverseOrder) {
-                    return char >= a[index - 1]
-                } else {
-                    return char >= a[index - 1]
-                }
-            })
+            if (!reverseOrder) {
+                return a.every((char, i) => {
+                    // console.log(a[i]);
+                    return i==0 || char >= a[i - 1];
+                });
+            }else{
+               a.reverse()
+               return a.every((char, i) => {
+                    return i==0 || char > a[i - 1];
+                });
+            }
         }
-        console.log(AlphaSort("abbfhkpqtyz", false));
-        console.log(AlphaSort("zyxgfba", true));
+        console.log(AlphaSort("abcdefgh", false));
+        console.log(AlphaSort("hgfedcba", true));
 
         function orderVowelConstant(str, position) {
             var char = str.charAt(position - 1);
@@ -33,10 +36,10 @@
                 return "consonant"
             }
         }
-        console.log(orderVowelConstant("eello", 1));
-        console.log(orderVowelConstant("cat", 2));
-        console.log(orderVowelConstant("mango", 0));
-        console.log(orderVowelConstant("republic", 6));
+        // console.log(orderVowelConstant("eello", 1));
+        // console.log(orderVowelConstant("cat", 2));
+        // console.log(orderVowelConstant("mango", 0));
+        // console.log(orderVowelConstant("republic", 6));
 
         function reapeatChar(somestring, reateatTimes) {
             var chars = somestring.split('');
@@ -44,12 +47,11 @@
                 pre[cur] = pre[cur] + 1 || 1;
                 return pre;
             }, {})
-            console.log(counts, "aaaaaaaaaaaaa");
             return Object.keys(counts).filter(char => counts[char] >= reateatTimes);
         }
 
-        console.log(reapeatChar("abcddef", 2));
-        console.log(reapeatChar("nscgggncdkkk", 3));
+        // console.log(reapeatChar("abcddef", 0));
+        // console.log(reapeatChar("nscgggncdkkk", 4));
     </script>
 </body>
 
